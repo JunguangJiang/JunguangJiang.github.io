@@ -219,20 +219,15 @@ where <span class="math notranslate nohighlight">\(\sigma^2_\text{new}\)</span> 
 <span class="math notranslate nohighlight">\(\sigma^2_t = \dfrac{\alpha}{n^2}\sum_{i,j} \| x_i - x_j \|^2\)</span> is the
 new observed value.</p>
 </div>
-<p>Parameters:</p>
-<blockquote>
-<div><ul class="simple">
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
 <li><p>sigma (float, optional): bandwidth <span class="math notranslate nohighlight">\(\sigma\)</span>. Default: None</p></li>
 <li><p>momentum (float, optional): value used for the <span class="math notranslate nohighlight">\(\sigma^2\)</span> computation. Default: 0.1</p></li>
-<li><dl class="simple">
-<dt>track_running_stats (bool, optional): If <code class="docutils literal notranslate"><span class="pre">True</span></code>, this module tracks the running mean of <span class="math notranslate nohighlight">\(\sigma^2\)</span>.</dt><dd><p>Otherwise, this module does not track such statistics and always uses fix <span class="math notranslate nohighlight">\(\sigma^2\)</span>. Default: <code class="docutils literal notranslate"><span class="pre">True</span></code></p>
-</dd>
-</dl>
-</li>
+<li><p>track_running_stats (bool, optional): If <code class="docutils literal notranslate"><span class="pre">True</span></code>, this module tracks the running mean of <span class="math notranslate nohighlight">\(\sigma^2\)</span>.
+Otherwise, it won’t track such statistics and always uses fix <span class="math notranslate nohighlight">\(\sigma^2\)</span>. Default: <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
 <li><p>alpha (float, optional): decide the magnitude of <span class="math notranslate nohighlight">\(\sigma^2\)</span> when track_running_stats is set to <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
 </ul>
-</div></blockquote>
-<dl class="simple">
+</dd>
 <dt>Shape:</dt><dd><ul class="simple">
 <li><p>Input: <span class="math notranslate nohighlight">\((N, F)\)</span> where F means the dimension of input features.</p></li>
 <li><p>Output: <span class="math notranslate nohighlight">\((N, N)\)</span></p></li>
@@ -252,8 +247,13 @@ new observed value.</p>
 <p>Domain adversarial loss measures the domain discrepancy through training a domain discriminator.</p>
 <dl>
 <dt>Parameters:</dt><dd><ul class="simple">
-<li><p>domain_discriminator (class:<cite>nn.Module</cite> object): A domain discriminator object, which predicts the domains             of features. Its input shape is (N, F) and output shape is (N, 1)</p></li>
-<li><p>reduction (string, optional): Specifies the reduction to apply to the output:             <code class="docutils literal notranslate"><span class="pre">'none'</span></code> | <code class="docutils literal notranslate"><span class="pre">'mean'</span></code> | <code class="docutils literal notranslate"><span class="pre">'sum'</span></code>. <code class="docutils literal notranslate"><span class="pre">'none'</span></code>: no reduction will be applied,             <code class="docutils literal notranslate"><span class="pre">'mean'</span></code>: the sum of the output will be divided by the number of             elements in the output, <code class="docutils literal notranslate"><span class="pre">'sum'</span></code>: the output will be summed. Note: <code class="xref py py-attr docutils literal notranslate"><span class="pre">size_average</span></code>             and <code class="xref py py-attr docutils literal notranslate"><span class="pre">reduce</span></code> are in the process of being deprecated, and in the meantime,             specifying either of those two args will override <code class="xref py py-attr docutils literal notranslate"><span class="pre">reduction</span></code>. Default: <code class="docutils literal notranslate"><span class="pre">'mean'</span></code></p></li>
+<li><p>domain_discriminator (class:<cite>nn.Module</cite> object): A domain discriminator object, which predicts the domains of features. Its input shape is (N, F) and output shape is (N, 1)</p></li>
+<li><p>reduction (string, optional): Specifies the reduction to apply to the output:
+<code class="docutils literal notranslate"><span class="pre">'none'</span></code> | <code class="docutils literal notranslate"><span class="pre">'mean'</span></code> | <code class="docutils literal notranslate"><span class="pre">'sum'</span></code>. <code class="docutils literal notranslate"><span class="pre">'none'</span></code>: no reduction will be applied,
+<code class="docutils literal notranslate"><span class="pre">'mean'</span></code>: the sum of the output will be divided by the number of
+elements in the output, <code class="docutils literal notranslate"><span class="pre">'sum'</span></code>: the output will be summed. Note: <code class="xref py py-attr docutils literal notranslate"><span class="pre">size_average</span></code>
+and <code class="xref py py-attr docutils literal notranslate"><span class="pre">reduce</span></code> are in the process of being deprecated, and in the meantime,
+specifying either of those two args will override <code class="xref py py-attr docutils literal notranslate"><span class="pre">reduction</span></code>. Default: <code class="docutils literal notranslate"><span class="pre">'mean'</span></code></p></li>
 </ul>
 </dd>
 <dt>Shape:</dt><dd><ul class="simple">
@@ -302,16 +302,25 @@ The source domain label is 1 and the target domain label is 0.</p>
 <em class="property">class </em><code class="sig-prename descclassname">dalib.adaptation.cdan.</code><code class="sig-name descname">ConditionalDomainAdversarialLoss</code><span class="sig-paren">(</span><em class="sig-param">domain_discriminator</em>, <em class="sig-param">entropy_conditioning=False</em>, <em class="sig-param">randomized=False</em>, <em class="sig-param">num_classes=-1</em>, <em class="sig-param">features_dim=-1</em>, <em class="sig-param">randomized_dim=1024</em>, <em class="sig-param">reduction='mean'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dalib/adaptation/cdan.html#ConditionalDomainAdversarialLoss"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dalib.adaptation.cdan.ConditionalDomainAdversarialLoss" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
 <p>The <a class="reference external" href="https://arxiv.org/abs/1705.10667">Conditional Domain Adversarial Loss</a></p>
-<p>Conditional Domain adversarial loss measures the domain discrepancy through training a domain discriminator in a conditional manner.</p>
+<p>Conditional Domain adversarial loss measures the domain discrepancy through training a domain discriminator in a
+conditional manner.</p>
 <dl class="simple">
 <dt>Parameters:</dt><dd><ul class="simple">
-<li><p>domain_discriminator (class:<cite>nn.Module</cite> object): A domain discriminator object, which predicts the domains of             features. Its input shape is (N, F) and output shape is (N, 1)</p></li>
-<li><p>entropy_conditioning (bool, optional): If True, use entropy-aware weight to reweight each training             example. Default: False</p></li>
-<li><p>randomized (bool, optional): If True, use randomized multi linear map. Else, use multi linear map.             Default: False</p></li>
+<li><p>domain_discriminator (class:<cite>nn.Module</cite> object): A domain discriminator object, which predicts the domains of
+features. Its input shape is (N, F) and output shape is (N, 1)</p></li>
+<li><p>entropy_conditioning (bool, optional): If True, use entropy-aware weight to reweight each training example.
+Default: False</p></li>
+<li><p>randomized (bool, optional): If True, use randomized multi linear map. Else, use multi linear map.
+Default: False</p></li>
 <li><p>num_classes (int, optional): Number of classes</p></li>
 <li><p>features_dim (int, optional): Dimension of input features</p></li>
 <li><p>randomized_dim (int, optional): Dimension of features after randomized. Default: 1024</p></li>
-<li><p>reduction (string, optional): Specifies the reduction to apply to the output:             <code class="docutils literal notranslate"><span class="pre">'none'</span></code> | <code class="docutils literal notranslate"><span class="pre">'mean'</span></code> | <code class="docutils literal notranslate"><span class="pre">'sum'</span></code>. <code class="docutils literal notranslate"><span class="pre">'none'</span></code>: no reduction will be applied,             <code class="docutils literal notranslate"><span class="pre">'mean'</span></code>: the sum of the output will be divided by the number of             elements in the output, <code class="docutils literal notranslate"><span class="pre">'sum'</span></code>: the output will be summed. Note: <code class="xref py py-attr docutils literal notranslate"><span class="pre">size_average</span></code>             and <code class="xref py py-attr docutils literal notranslate"><span class="pre">reduce</span></code> are in the process of being deprecated, and in the meantime,             specifying either of those two args will override <code class="xref py py-attr docutils literal notranslate"><span class="pre">reduction</span></code>. Default: <code class="docutils literal notranslate"><span class="pre">'mean'</span></code></p></li>
+<li><p>reduction (string, optional): Specifies the reduction to apply to the output:
+<code class="docutils literal notranslate"><span class="pre">'none'</span></code> | <code class="docutils literal notranslate"><span class="pre">'mean'</span></code> | <code class="docutils literal notranslate"><span class="pre">'sum'</span></code>. <code class="docutils literal notranslate"><span class="pre">'none'</span></code>: no reduction will be applied,
+<code class="docutils literal notranslate"><span class="pre">'mean'</span></code>: the sum of the output will be divided by the number of
+elements in the output, <code class="docutils literal notranslate"><span class="pre">'sum'</span></code>: the output will be summed. Note: <code class="xref py py-attr docutils literal notranslate"><span class="pre">size_average</span></code>
+and <code class="xref py py-attr docutils literal notranslate"><span class="pre">reduce</span></code> are in the process of being deprecated, and in the meantime,
+specifying either of those two args will override <code class="xref py py-attr docutils literal notranslate"><span class="pre">reduction</span></code>. Default: <code class="docutils literal notranslate"><span class="pre">'mean'</span></code></p></li>
 </ul>
 </dd>
 </dl>
@@ -362,7 +371,12 @@ is set True.</p>
 <dt>Parameters:</dt><dd><ul class="simple">
 <li><p>adversarial_classifier (class:<cite>nn.Module</cite> object): A classifier head which tries to maximize the margin disparity discrepancy.</p></li>
 <li><p>margin (float, optional):  margin gamma. Default: 2</p></li>
-<li><p>reduction (string, optional): Specifies the reduction to apply to the output:             <code class="docutils literal notranslate"><span class="pre">'none'</span></code> | <code class="docutils literal notranslate"><span class="pre">'mean'</span></code> | <code class="docutils literal notranslate"><span class="pre">'sum'</span></code>. <code class="docutils literal notranslate"><span class="pre">'none'</span></code>: no reduction will be applied,             <code class="docutils literal notranslate"><span class="pre">'mean'</span></code>: the sum of the output will be divided by the number of             elements in the output, <code class="docutils literal notranslate"><span class="pre">'sum'</span></code>: the output will be summed. Note: <code class="xref py py-attr docutils literal notranslate"><span class="pre">size_average</span></code>             and <code class="xref py py-attr docutils literal notranslate"><span class="pre">reduce</span></code> are in the process of being deprecated, and in the meantime,             specifying either of those two args will override <code class="xref py py-attr docutils literal notranslate"><span class="pre">reduction</span></code>. Default: <code class="docutils literal notranslate"><span class="pre">'mean'</span></code></p></li>
+<li><p>reduction (string, optional): Specifies the reduction to apply to the output:
+<code class="docutils literal notranslate"><span class="pre">'none'</span></code> | <code class="docutils literal notranslate"><span class="pre">'mean'</span></code> | <code class="docutils literal notranslate"><span class="pre">'sum'</span></code>. <code class="docutils literal notranslate"><span class="pre">'none'</span></code>: no reduction will be applied,
+<code class="docutils literal notranslate"><span class="pre">'mean'</span></code>: the sum of the output will be divided by the number of
+elements in the output, <code class="docutils literal notranslate"><span class="pre">'sum'</span></code>: the output will be summed. Note: <code class="xref py py-attr docutils literal notranslate"><span class="pre">size_average</span></code>
+and <code class="xref py py-attr docutils literal notranslate"><span class="pre">reduce</span></code> are in the process of being deprecated, and in the meantime,
+specifying either of those two args will override <code class="xref py py-attr docutils literal notranslate"><span class="pre">reduction</span></code>. Default: <code class="docutils literal notranslate"><span class="pre">'mean'</span></code></p></li>
 </ul>
 </dd>
 </dl>
@@ -400,12 +414,12 @@ merely a classifier head, e.g. <cite>dalib.adaptation.mdd.AdversarialClassifier<
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torch.nn.modules.module.Module</span></code></p>
 <p>The margin disparity discrepancy (MDD) is proposed to measure the distribution discrepancy in domain adaptation.
 The definition can be described as:</p>
-<p>You can see more details in <cite>Bridging Theory and Algorithm for Domain Adaptation</cite>
-Parameters:</p>
-<blockquote>
-<div><p>margin (float): margin gamma.</p>
-</div></blockquote>
+<p>You can see more details in <cite>Bridging Theory and Algorithm for Domain Adaptation</cite></p>
 <dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p>margin (float): margin gamma.</p></li>
+</ul>
+</dd>
 <dt>Shape:</dt><dd><ul class="simple">
 <li><p>Input: <span class="math notranslate nohighlight">\((N, C)\)</span> where C = number of classes.</p></li>
 <li><p>Output: scalar. If reduction is ‘none’, then <cite>(N)</cite></p></li>

@@ -162,7 +162,7 @@
 
 
 <div class="viewcode-block" id="DomainDiscriminator"><a class="viewcode-back" href="../../../dalib.adaptation.html#dalib.adaptation.cdan.DomainDiscriminator">[docs]</a><span class="k">class</span> <span class="nc">DomainDiscriminator</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Domain discriminator model. See class:`dalib.adaptation.dann.DomainDiscriminator` for details.</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Domain discriminator model. See class:`dalib.adaptation.dann.DomainDiscriminator` for details.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">in_feature</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">(</span><span class="n">DomainDiscriminator</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
@@ -182,29 +182,30 @@
 
 
 <div class="viewcode-block" id="ConditionalDomainAdversarialLoss"><a class="viewcode-back" href="../../../dalib.adaptation.html#dalib.adaptation.cdan.ConditionalDomainAdversarialLoss">[docs]</a><span class="k">class</span> <span class="nc">ConditionalDomainAdversarialLoss</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;The `Conditional Domain Adversarial Loss &lt;https://arxiv.org/abs/1705.10667&gt;`_</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;The `Conditional Domain Adversarial Loss &lt;https://arxiv.org/abs/1705.10667&gt;`_</span>
 
-<span class="sd">    Conditional Domain adversarial loss measures the domain discrepancy through training a domain discriminator in a conditional manner.</span>
+<span class="sd">    Conditional Domain adversarial loss measures the domain discrepancy through training a domain discriminator in a</span>
+<span class="sd">    conditional manner.</span>
 
 <span class="sd">    ..</span>
 <span class="sd">        TODO add CDAN math definitions, explain what y_s, f_s, y_t, f_t means.</span>
 
 <span class="sd">    Parameters:</span>
-<span class="sd">        - domain_discriminator (class:`nn.Module` object): A domain discriminator object, which predicts the domains of \</span>
-<span class="sd">            features. Its input shape is (N, F) and output shape is (N, 1)</span>
-<span class="sd">        - entropy_conditioning (bool, optional): If True, use entropy-aware weight to reweight each training \</span>
-<span class="sd">            example. Default: False</span>
-<span class="sd">        - randomized (bool, optional): If True, use randomized multi linear map. Else, use multi linear map. \</span>
-<span class="sd">            Default: False</span>
+<span class="sd">        - domain_discriminator (class:`nn.Module` object): A domain discriminator object, which predicts the domains of</span>
+<span class="sd">          features. Its input shape is (N, F) and output shape is (N, 1)</span>
+<span class="sd">        - entropy_conditioning (bool, optional): If True, use entropy-aware weight to reweight each training example.</span>
+<span class="sd">          Default: False</span>
+<span class="sd">        - randomized (bool, optional): If True, use randomized multi linear map. Else, use multi linear map.</span>
+<span class="sd">          Default: False</span>
 <span class="sd">        - num_classes (int, optional): Number of classes</span>
 <span class="sd">        - features_dim (int, optional): Dimension of input features</span>
 <span class="sd">        - randomized_dim (int, optional): Dimension of features after randomized. Default: 1024</span>
-<span class="sd">        - reduction (string, optional): Specifies the reduction to apply to the output: \</span>
-<span class="sd">            ``&#39;none&#39;`` | ``&#39;mean&#39;`` | ``&#39;sum&#39;``. ``&#39;none&#39;``: no reduction will be applied, \</span>
-<span class="sd">            ``&#39;mean&#39;``: the sum of the output will be divided by the number of \</span>
-<span class="sd">            elements in the output, ``&#39;sum&#39;``: the output will be summed. Note: :attr:`size_average` \</span>
-<span class="sd">            and :attr:`reduce` are in the process of being deprecated, and in the meantime, \</span>
-<span class="sd">            specifying either of those two args will override :attr:`reduction`. Default: ``&#39;mean&#39;``</span>
+<span class="sd">        - reduction (string, optional): Specifies the reduction to apply to the output:</span>
+<span class="sd">          ``&#39;none&#39;`` | ``&#39;mean&#39;`` | ``&#39;sum&#39;``. ``&#39;none&#39;``: no reduction will be applied,</span>
+<span class="sd">          ``&#39;mean&#39;``: the sum of the output will be divided by the number of</span>
+<span class="sd">          elements in the output, ``&#39;sum&#39;``: the output will be summed. Note: :attr:`size_average`</span>
+<span class="sd">          and :attr:`reduce` are in the process of being deprecated, and in the meantime,</span>
+<span class="sd">          specifying either of those two args will override :attr:`reduction`. Default: ``&#39;mean&#39;``</span>
 
 <span class="sd">    .. note::</span>
 <span class="sd">        You need to provide num_classes, features_dim and randomized_dim `only when` randomized</span>
