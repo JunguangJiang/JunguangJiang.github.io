@@ -1,0 +1,22 @@
+dalib package
+=============
+
+Subpackages
+-----------
+
+.. toctree::
+
+    dalib.modules
+    dalib.adaptation
+    dalib.vision.datasets
+    dalib.vision.models
+    dalib.text.datasets
+    dalib.text.models
+
+Module contents
+---------------
+
+.. automodule:: dalib
+    :members:
+    :undoc-members:
+    :show-inheritance:

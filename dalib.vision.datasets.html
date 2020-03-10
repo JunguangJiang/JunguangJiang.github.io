@@ -1,0 +1,288 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Vision Datasets &mdash; dalib 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> dalib
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Vision Datasets</a><ul>
+<li><a class="reference internal" href="#module-dalib.vision.datasets.imagelist">ImageList</a></li>
+<li><a class="reference internal" href="#module-dalib.vision.datasets.office31">Office-31</a></li>
+<li><a class="reference internal" href="#module-dalib.vision.datasets.officehome">Office-Home</a></li>
+<li><a class="reference internal" href="#module-dalib.vision.datasets.visda2017">VisDA-2017</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">dalib</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Vision Datasets</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/dalib.vision.datasets.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="vision-datasets">
+<h1>Vision Datasets<a class="headerlink" href="#vision-datasets" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="module-dalib.vision.datasets.imagelist">
+<span id="imagelist"></span><h2>ImageList<a class="headerlink" href="#module-dalib.vision.datasets.imagelist" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dalib.vision.datasets.imagelist.ImageList">
+<em class="property">class </em><code class="sig-prename descclassname">dalib.vision.datasets.imagelist.</code><code class="sig-name descname">ImageList</code><span class="sig-paren">(</span><em class="sig-param">root</em>, <em class="sig-param">num_classes</em>, <em class="sig-param">data_list_file</em>, <em class="sig-param">transform=None</em>, <em class="sig-param">target_transform=None</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dalib/vision/datasets/imagelist.html#ImageList"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dalib.vision.datasets.imagelist.ImageList" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">torchvision.datasets.vision.VisionDataset</span></code></p>
+<p>A generic Dataset class for domain adaptation in image classification</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p>root (str): Root directory of dataset</p></li>
+<li><p>num_classes (int): Number of classes</p></li>
+<li><p>data_list_file (str): File to read the image list from.</p></li>
+<li><p>transform (callable, optional): A function/transform that  takes in an PIL image             and returns a transformed version. E.g, <code class="docutils literal notranslate"><span class="pre">transforms.RandomCrop</span></code>.</p></li>
+<li><p>target_transform (callable, optional): A function/transform that takes in the target and transforms it.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In <cite>data_list_file</cite>, each line 2 values in the following format.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source_dir</span><span class="o">/</span><span class="n">dog_xxx</span><span class="o">.</span><span class="n">png</span> <span class="mi">0</span>
+<span class="n">source_dir</span><span class="o">/</span><span class="n">cat_123</span><span class="o">.</span><span class="n">png</span> <span class="mi">1</span>
+<span class="n">target_dir</span><span class="o">/</span><span class="n">dog_xxy</span><span class="o">.</span><span class="n">png</span> <span class="mi">0</span>
+<span class="n">target_dir</span><span class="o">/</span><span class="n">cat_nsdf3</span><span class="o">.</span><span class="n">png</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>The first value is the relative path of an image, and the second value is the label of the corresponding image.
+If your data_list_file has different formats, please over-ride <cite>parse_data_file</cite>.</p>
+</div>
+<dl class="method">
+<dt id="dalib.vision.datasets.imagelist.ImageList.num_classes">
+<em class="property">property </em><code class="sig-name descname">num_classes</code><a class="headerlink" href="#dalib.vision.datasets.imagelist.ImageList.num_classes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Number of classes</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dalib.vision.datasets.imagelist.ImageList.parse_data_file">
+<code class="sig-name descname">parse_data_file</code><span class="sig-paren">(</span><em class="sig-param">file_name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dalib/vision/datasets/imagelist.html#ImageList.parse_data_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dalib.vision.datasets.imagelist.ImageList.parse_data_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse file to data list</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p>file_name (str): The path of data file</p></li>
+<li><p>return (list): List of (image path, class_index) tuples</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-dalib.vision.datasets.office31">
+<span id="office-31"></span><h2>Office-31<a class="headerlink" href="#module-dalib.vision.datasets.office31" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dalib.vision.datasets.office31.Office31">
+<em class="property">class </em><code class="sig-prename descclassname">dalib.vision.datasets.office31.</code><code class="sig-name descname">Office31</code><span class="sig-paren">(</span><em class="sig-param">root</em>, <em class="sig-param">task</em>, <em class="sig-param">download=True</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dalib/vision/datasets/office31.html#Office31"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dalib.vision.datasets.office31.Office31" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dalib.vision.datasets.imagelist.ImageList" title="dalib.vision.datasets.imagelist.ImageList"><code class="xref py py-class docutils literal notranslate"><span class="pre">dalib.vision.datasets.imagelist.ImageList</span></code></a></p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-dalib.vision.datasets.officehome">
+<span id="office-home"></span><h2>Office-Home<a class="headerlink" href="#module-dalib.vision.datasets.officehome" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dalib.vision.datasets.officehome.OfficeHome">
+<em class="property">class </em><code class="sig-prename descclassname">dalib.vision.datasets.officehome.</code><code class="sig-name descname">OfficeHome</code><span class="sig-paren">(</span><em class="sig-param">root</em>, <em class="sig-param">task</em>, <em class="sig-param">download=False</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dalib/vision/datasets/officehome.html#OfficeHome"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dalib.vision.datasets.officehome.OfficeHome" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dalib.vision.datasets.imagelist.ImageList" title="dalib.vision.datasets.imagelist.ImageList"><code class="xref py py-class docutils literal notranslate"><span class="pre">dalib.vision.datasets.imagelist.ImageList</span></code></a></p>
+<p><a class="reference external" href="http://hemanthdv.org/OfficeHome-Dataset/">OfficeHome</a> Dataset.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><ul class="simple">
+<li><p>root (str): Root directory of dataset</p></li>
+<li><p>task (str): The task (domain) to create dataset. Choices include ‘Ar’ (Art),             ‘Cl’ (Clipart), ‘Pr’ (Product) and ‘Rw’ (Real_World).</p></li>
+<li><p>download (bool, optional): If true, downloads the dataset from the internet and puts it             in root directory. If dataset is already downloaded, it is not downloaded again.</p></li>
+<li><p>transform (callable, optional): A function/transform that  takes in an PIL image and returns a             transformed version. E.g, <code class="docutils literal notranslate"><span class="pre">transforms.RandomCrop</span></code>.</p></li>
+<li><p>target_transform (callable, optional): A function/transform that takes in the target and transforms it.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-dalib.vision.datasets.visda2017">
+<span id="visda-2017"></span><h2>VisDA-2017<a class="headerlink" href="#module-dalib.vision.datasets.visda2017" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="dalib.vision.datasets.visda2017.VisDA2017">
+<em class="property">class </em><code class="sig-prename descclassname">dalib.vision.datasets.visda2017.</code><code class="sig-name descname">VisDA2017</code><span class="sig-paren">(</span><em class="sig-param">root</em>, <em class="sig-param">task</em>, <em class="sig-param">download=False</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dalib/vision/datasets/visda2017.html#VisDA2017"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dalib.vision.datasets.visda2017.VisDA2017" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#dalib.vision.datasets.imagelist.ImageList" title="dalib.vision.datasets.imagelist.ImageList"><code class="xref py py-class docutils literal notranslate"><span class="pre">dalib.vision.datasets.imagelist.ImageList</span></code></a></p>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, jiangjunguang, fubo
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

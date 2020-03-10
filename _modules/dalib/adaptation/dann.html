@@ -1,0 +1,296 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>dalib.adaptation.dann &mdash; dalib 0.0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> dalib
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../dalib.modules.html">DALIB Basic Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dalib.adaptation.html">DALIB Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dalib.vision.datasets.html">Vision Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dalib.vision.models.html">Vision Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dalib.text.datasets.html">Text Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dalib.text.models.html">Text Models</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">dalib</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>dalib.adaptation.dann</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for dalib.adaptation.dann</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
+<span class="kn">from</span> <span class="nn">dalib.modules.grl</span> <span class="kn">import</span> <span class="n">WarmStartGradientReverseLayer</span>
+<span class="kn">from</span> <span class="nn">._util</span> <span class="kn">import</span> <span class="n">binary_accuracy</span>
+<span class="kn">from</span> <span class="nn">dalib.modules.classifier</span> <span class="kn">import</span> <span class="n">Classifier</span> <span class="k">as</span> <span class="n">ClassifierBase</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;DomainDiscriminator&#39;</span><span class="p">,</span> <span class="s1">&#39;DomainAdversarialLoss&#39;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="DomainDiscriminator"><a class="viewcode-back" href="../../../dalib.adaptation.html#dalib.adaptation.dann.DomainDiscriminator">[docs]</a><span class="k">class</span> <span class="nc">DomainDiscriminator</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Domain discriminator model from</span>
+<span class="sd">    `&quot;Domain-Adversarial Training of Neural Networks&quot; &lt;https://arxiv.org/abs/1505.07818&gt;`_</span>
+
+<span class="sd">    Distinguish whether the features with input size (N, F) come from the source domain or the target domain.</span>
+<span class="sd">    The source domain label is 1 and the target domain label is 0.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        - in_feature (int): dimension of the input feature</span>
+<span class="sd">        - hidden_size (int): dimension of the hidden features</span>
+
+<span class="sd">    Shape:</span>
+<span class="sd">        - Input: :math:`(N, F)`</span>
+<span class="sd">        - Output: :math:`(N, 1)`</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">in_feature</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">DomainDiscriminator</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layer1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">in_feature</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bn1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm1d</span><span class="p">(</span><span class="n">hidden_size</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">relu1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layer2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bn2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm1d</span><span class="p">(</span><span class="n">hidden_size</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">relu2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layer3</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_size</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sigmoid</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sigmoid</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">relu1</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bn1</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layer1</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">relu2</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bn2</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layer2</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layer3</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">y</span>
+
+    <span class="k">def</span> <span class="nf">get_parameters</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[{</span><span class="s2">&quot;params&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="s2">&quot;lr_mult&quot;</span><span class="p">:</span> <span class="mf">1.</span><span class="p">}]</span></div>
+
+
+<div class="viewcode-block" id="DomainAdversarialLoss"><a class="viewcode-back" href="../../../dalib.adaptation.html#dalib.adaptation.dann.DomainAdversarialLoss">[docs]</a><span class="k">class</span> <span class="nc">DomainAdversarialLoss</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;The `Domain Adversarial Loss &lt;https://arxiv.org/abs/1505.07818&gt;`_</span>
+
+<span class="sd">    Domain adversarial loss measures the domain discrepancy through training a domain discriminator.</span>
+
+<span class="sd">    ..</span>
+<span class="sd">        TODO add DANN math definitions, explain what f_s, f_t means.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">        - domain_discriminator (class:`nn.Module` object): A domain discriminator object, which predicts the domains \</span>
+<span class="sd">            of features. Its input shape is (N, F) and output shape is (N, 1)</span>
+<span class="sd">        - reduction (string, optional): Specifies the reduction to apply to the output: \</span>
+<span class="sd">            ``&#39;none&#39;`` | ``&#39;mean&#39;`` | ``&#39;sum&#39;``. ``&#39;none&#39;``: no reduction will be applied, \</span>
+<span class="sd">            ``&#39;mean&#39;``: the sum of the output will be divided by the number of \</span>
+<span class="sd">            elements in the output, ``&#39;sum&#39;``: the output will be summed. Note: :attr:`size_average` \</span>
+<span class="sd">            and :attr:`reduce` are in the process of being deprecated, and in the meantime, \</span>
+<span class="sd">            specifying either of those two args will override :attr:`reduction`. Default: ``&#39;mean&#39;``</span>
+
+<span class="sd">    Shape:</span>
+<span class="sd">        - f_s, f_t: :math:`(N, F)` where F means the dimension of input features.</span>
+<span class="sd">        - Output: scalar by default. If :attr:``reduction`` is ``&#39;none&#39;``, then :math:`(N, )`.</span>
+
+<span class="sd">    Examples::</span>
+<span class="sd">        &gt;&gt;&gt; discriminator = DomainDiscriminator(in_feature=1024, hidden_size=1024)</span>
+<span class="sd">        &gt;&gt;&gt; loss = DomainAdversarialLoss(discriminator, reduction=&#39;mean&#39;)</span>
+<span class="sd">        &gt;&gt;&gt; # features from source domain and target domain</span>
+<span class="sd">        &gt;&gt;&gt; f_s, f_t = torch.randn(20, 1024), torch.randn(20, 1024)</span>
+<span class="sd">        &gt;&gt;&gt; output = loss(f_s, f_t)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">domain_discriminator</span><span class="p">,</span> <span class="n">reduction</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">DomainAdversarialLoss</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grl</span> <span class="o">=</span> <span class="n">WarmStartGradientReverseLayer</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">lo</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">hi</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">max_iters</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">domain_discriminator</span> <span class="o">=</span> <span class="n">domain_discriminator</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">bce</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">BCELoss</span><span class="p">(</span><span class="n">reduction</span><span class="o">=</span><span class="n">reduction</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">domain_discriminator_accuracy</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">f_s</span><span class="p">,</span> <span class="n">f_t</span><span class="p">):</span>
+        <span class="n">f_s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grl</span><span class="p">(</span><span class="n">f_s</span><span class="p">)</span>
+        <span class="n">d_s</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">domain_discriminator</span><span class="p">(</span><span class="n">f_s</span><span class="p">)</span>
+        <span class="n">d_label_s</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">f_s</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
+
+        <span class="n">f_t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">grl</span><span class="p">(</span><span class="n">f_t</span><span class="p">)</span>
+        <span class="n">d_t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">domain_discriminator</span><span class="p">(</span><span class="n">f_t</span><span class="p">)</span>
+        <span class="n">d_label_t</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">f_t</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">cuda</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">grl</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">domain_discriminator_accuracy</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">binary_accuracy</span><span class="p">(</span><span class="n">d_s</span><span class="p">,</span> <span class="n">d_label_s</span><span class="p">)</span> <span class="o">+</span> <span class="n">binary_accuracy</span><span class="p">(</span><span class="n">d_t</span><span class="p">,</span> <span class="n">d_label_t</span><span class="p">))</span>
+        <span class="k">return</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bce</span><span class="p">(</span><span class="n">d_s</span><span class="p">,</span> <span class="n">d_label_s</span><span class="p">)</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">bce</span><span class="p">(</span><span class="n">d_t</span><span class="p">,</span> <span class="n">d_label_t</span><span class="p">))</span></div>
+
+
+<span class="k">class</span> <span class="nc">Classifier</span><span class="p">(</span><span class="n">ClassifierBase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">backbone</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">,</span> <span class="n">bottleneck_dim</span><span class="o">=</span><span class="mi">256</span><span class="p">):</span>
+        <span class="n">bottleneck</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">backbone</span><span class="o">.</span><span class="n">out_features</span><span class="p">,</span> <span class="n">bottleneck_dim</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm1d</span><span class="p">(</span><span class="n">bottleneck_dim</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
+        <span class="p">)</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Classifier</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">backbone</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">,</span> <span class="n">bottleneck</span><span class="p">,</span> <span class="n">bottleneck_dim</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, jiangjunguang, fubo
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
