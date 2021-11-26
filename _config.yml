@@ -81,13 +81,13 @@ analytics:
 # Site Author
 author:
   name             : "JunguangJiang"
-  avatar           : "images/profile.png"
-  bio              : ""
+  avatar           : "profile.png"
+  bio              : 
   location         : "Beijing, China"
   employer         :
-  pubmed           : 
+  pubmed           :                                                                                                                                                                                                                                                                                                                                                                                                                                                
   googlescholar    : "https://scholar.google.com/citations?hl=zh-CN&user=dXS9TPUAAAAJ"
-  email            :
+  email            : "JiangJunguang1123@outlook.com"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -96,14 +96,14 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "https://github.com/JunguangJiang"
+  github           : "JunguangJiang"
   google_plus      :
   keybase          :
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         :
-  orcid            : "http://orcid.org/yourorcidurl"
+  orcid            :
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
