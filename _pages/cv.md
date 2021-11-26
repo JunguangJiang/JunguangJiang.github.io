@@ -11,30 +11,29 @@ redirect_from:
 
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* B.E. in Software Engineering, Tsinghua University, China, 2016-2020
+  * GPA: 3.9 2st/83
+* M.S. in Software Engineering, Tsinghua University, China, 2020-2023
+
+Awards
+======
+* Comprehensive Excellence Award, Tsinghua University, 2021
+* National Scholarship, Tsinghua University, 2019
+* Comprehensive Excellence Award, Tsinghua University, 2018
 
 Work experience
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-  
+* Summer 2020 - Summer 2021: Intern
+  * Y-tech, Kuaishou Technology
+  * Researched the transfer algorithms for both 2D and 3D keypoint detection problems.
+  * Published [Regressive Domain Adaptation for Unsupervised Keypoint Detection](https://openaccess.thecvf.com/content/CVPR2021/papers/Jiang_Regressive_Domain_Adaptation_for_Unsupervised_Keypoint_Detection_CVPR_2021_paper.pdf) as the first author on CVPR2020
+ 
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* PyTorch
+* Python
+* Java
+* C++/C
 
 Publications
 ======
@@ -42,18 +41,8 @@ Publications
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-Talks
+Projects
 ======
-  <ul>{% for post in site.talks %}
+  <ul>{% for post in site.projects %}
     {% include archive-single-talk-cv.html %}
   {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
