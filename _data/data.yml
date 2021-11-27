@@ -250,21 +250,21 @@ publications:
         paper: "https://junguangjiang.github.io/files/resource-efficient-domain-adaptation-acmmm20.pdf"
         code:
 
-skills:
-    title: Skills &amp; Proficiency
-
-    toolset:
-      - name: Python
-        level: 100%
-
-      - name: PyTorch
-        level: 95%
-
-      - name: C/C++
-        level: 75%
-
-      - name: Java
-        level: 75%
+#skills:
+#    title: Skills &amp; Proficiency
+#
+#    toolset:
+#      - name: Python
+#        level: 100%
+#
+#      - name: PyTorch
+#        level: 95%
+#
+#      - name: C/C++
+#        level: 75%
+#
+#      - name: Java
+#        level: 75%
 
 
 footer: >
