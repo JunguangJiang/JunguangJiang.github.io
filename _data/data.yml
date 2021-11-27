@@ -37,8 +37,9 @@ career-profile:
     summary: |
       I am Junguang Jiang. Now, I'm a Master Student at Tsinghua University under the supervision of Mingsheng Long.
 
-      - My current research foucs on algorithms and real-world applications for deep learning, transfer learning and domain adaptation.
-      - I created a Transfer Learning Library
+      My current research foucs on algorithms and real-world applications for deep learning, transfer learning and domain adaptation.
+
+      I created a Transfer Learning Library
       <a href="https://github.com/thuml/Transfer-Learning-Library">Translearners</a>
       and got over <img alt="GitHub stars" src="https://img.shields.io/github/stars/thuml/Transfer-Learning-Library?style=social">.
 
@@ -221,20 +222,18 @@ projects:
       Open source libraries and selected course projects.
 
     assignments:
-      - title: Transfer Learning Library (Translearners)
+      - title: Open Source Libraries -- Translearners <img alt="GitHub stars" src="https://img.shields.io/github/stars/thuml/Transfer-Learning-Library?style=social">
         link: "https://github.com/thuml/Transfer-Learning-Library"
         tagline: |
-           - An open-source and well-documented library for Domain Adaptation, Task Adaptation, and Domain Generalization.
-           - First Author of  Translearners
-            <img alt="GitHub stars" src="https://img.shields.io/github/stars/thuml/Transfer-Learning-Library?style=social">
-           - Contribute more than 20k lines of code.
+           - An open-source and well-documented library for Transfer Learning, Domain Adaptation, Task Adaptation, and Domain Generalization.
+           - First Author and contribute more than 20k lines of code.
 
-      - title: TinyCCompiler
+      - title: Selected Course Projects -- TinyCCompiler
         link: "https://github.com/JunguangJiang/TinyCCompiler"
         tagline: |
           - A tiny C compiler based on LLVM and ANTLR4.
           - Project for Compiler Principles which is scored A+.
-          - First Author and responsible for implementing symbol tables, error handling, functions, arrays, pointers, etc."
+          - First Author and responsible for implementing symbol tables, error handling, functions, arrays, pointers, etc.
 
 
 publications:
