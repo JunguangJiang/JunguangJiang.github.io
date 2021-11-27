@@ -105,7 +105,6 @@ education:
         - Supervised by [Mingsheng Long](http://ise.thss.tsinghua.edu.cn/~mlong/)
         - Huawei Scholarship, Tsinghua University, 2021
 
-educationcomplete:
     - degree: Bachelor Degree in Software Engineering
       university: Tsinghua University (Beijing, China)
       time: 2015 - 2020
@@ -114,6 +113,12 @@ educationcomplete:
         - National Scholarship, Tsinghua University, 2019
         - Comprehensive Excellence Award, Tsinghua University, 2018
 
+
+#educationcomplete:
+#    - degree: Applied Scientist full-time at AWS
+#      university: Germany
+#      time: 2020 Oct - current
+#      details: |
 #
 #    - degree: Applied Scientists Intern at AWS
 #      university: P. Perona, Pasadena, CA, USA
