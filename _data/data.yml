@@ -36,7 +36,11 @@ career-profile:
     title: Career Profile
     summary: |
       I am Junguang Jiang. Now, I'm a Master Student at Tsinghua University under the supervision of Mingsheng Long.
-      My current research foucs on algorithms and real-world applications for deep transfer learning, especically deep domain adaptation.
+      My current research foucs on algorithms and real-world applications for deep transfer learning,
+      especically deep domain adaptation.
+      I created a Transfer Learning Library
+      <a href="https://github.com/thuml/Transfer-Learning-Library">Translearners</a>
+      and got over <img alt="GitHub stars" src="https://img.shields.io/github/stars/thuml/Transfer-Learning-Library?style=social">.
 
 #news:
 #    title: News
@@ -110,7 +114,7 @@ education:
       university: Tsinghua University (Beijing, China)
       time: 2015 - 2020
       details: |
-        - GPA: 3.9 2st/83
+        - GPA: 3.9 **2st/83**
         - National Scholarship, Tsinghua University, 2019
         - Comprehensive Excellence Award, Tsinghua University, 2018
 
