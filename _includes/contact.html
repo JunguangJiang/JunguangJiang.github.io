@@ -25,6 +25,12 @@
     </li>
     {% endif %}
 
+    {% if sidebar.zhihu %}
+    <li class="weixin"><i class="fab fa-weixin"></i>
+      <a href="https://zhihu.com/people/{{ sidebar.zhihu }}" target="_blank">{{ sidebar.zhihu }}</a>
+    </li>
+    {% endif %}
+
     {% if sidebar.github %}
     <li class="github"><i class="fab fa-github"></i>
       <a href="http://github.com/{{ sidebar.github }}" target="_blank">{{ sidebar.github }}</a>
