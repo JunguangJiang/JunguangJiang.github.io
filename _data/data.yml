@@ -211,10 +211,10 @@ projects:
 
     assignments:
       - title: Transfer Learning Library (First Author)
-        link: "https://github.com/thuml/Transfer-Learning-Library (Translearners)"
+        link: "https://github.com/thuml/Transfer-Learning-Library"
         tagline: "
-         Translearners is an open-source and well-documented library for Domain Adaptation,
-         Task Adaptation, and Domain Generalization.
+         Transfer Learning Library (Translearners) is an open-source and well-documented library
+          for Domain Adaptation, Task Adaptation, and Domain Generalization.
          It is based on pure PyTorch with high performance and friendly API.
          The code is pythonic, and the design is consistent with torchvision.
          You can easily develop new algorithms, or readily apply existing algorithms."
