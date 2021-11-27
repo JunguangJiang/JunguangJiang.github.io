@@ -36,9 +36,9 @@ career-profile:
     title: Career Profile
     summary: |
       I am Junguang Jiang. Now, I'm a Master Student at Tsinghua University under the supervision of Mingsheng Long.
-      My current research foucs on algorithms and real-world applications for deep transfer learning,
-      especically deep domain adaptation.
-      I created a Transfer Learning Library
+
+      - My current research foucs on algorithms and real-world applications for deep learning, transfer learning and domain adaptation.
+      - I created a Transfer Learning Library
       <a href="https://github.com/thuml/Transfer-Learning-Library">Translearners</a>
       and got over <img alt="GitHub stars" src="https://img.shields.io/github/stars/thuml/Transfer-Learning-Library?style=social">.
 
@@ -221,20 +221,23 @@ projects:
       Open source libraries and selected course projects.
 
     assignments:
-      - title: Transfer Learning Library <img alt="GitHub stars" src="https://img.shields.io/github/stars/thuml/Transfer-Learning-Library?style=social"> (First Author)
+      - title: Transfer Learning Library (First Author)
         link: "https://github.com/thuml/Transfer-Learning-Library"
-        tagline: "
-         Transfer Learning Library (Translearners) is an open-source and well-documented library
+        tagline:
+         - Transfer Learning Library (Translearners)
+          <img alt="GitHub stars" src="https://img.shields.io/github/stars/thuml/Transfer-Learning-Library?style=social">
+           is an open-source and well-documented library
           for Domain Adaptation, Task Adaptation, and Domain Generalization.
-         It is based on pure PyTorch with high performance and friendly API.
-         The code is pythonic, and the design is consistent with torchvision.
-         You can easily develop new algorithms, or readily apply existing algorithms."
+         - It is based on pure PyTorch with high performance and friendly API.
+         - The code is pythonic, and the design is consistent with torchvision.
+         - Contribute more than 20k lines of code
 
       - title: TinyCCompiler (First Author)
         link: "https://github.com/JunguangJiang/TinyCCompiler"
-        tagline: "A tiny C compiler based on LLVM and ANTLR4.
-        Project for Compiler Principles which is scored A+.
-        Responsible for implementing symbol tables, error handling, functions, arrays, pointers, etc."
+        tagline:
+        - A tiny C compiler based on LLVM and ANTLR4.
+        - Project for Compiler Principles which is scored A+.
+        - Responsible for implementing symbol tables, error handling, functions, arrays, pointers, etc."
 
 
 publications:
