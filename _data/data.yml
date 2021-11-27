@@ -234,27 +234,27 @@ publications:
 
     papers:
       - title: "Transferability in Deep Learning: A Survey"
-        authors: Junguang Jiang, Yang Shu, Mingsheng Long
+        authors: <b>Junguang Jiang</b>, Yang Shu, Mingsheng Long
         conference: To be published
         paper:
         code:
 
 
       - title: "Decoupled Adaptation for Cross-Domain Object Detection"
-        authors: Junguang Jiang, Baixu Chen, Jianmin Wang, Mingsheng Long
+        authors: <b>Junguang Jiang</b>, Baixu Chen, Jianmin Wang, Mingsheng Long
         conference: arixv, 2021
         paper: "https://junguangjiang.github.io/files/D_adapt.pdf"
         code:
 
       - title: "Regressive Domain Adaptation for Unsupervised Keypoint Detection"
-        authors: Junguang Jiang, Yifei Ji, Ximei Wang, Yufeng Liu, Jianmin Wang, Mingsheng Long
-        conference: CVPR, 2020
+        authors: <b>Junguang Jiang</b>, Yifei Ji, Ximei Wang, Yufeng Liu, Jianmin Wang, Mingsheng Long
+        conference: IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2021
         paper: "https://junguangjiang.github.io/files/regressive-domain-adaptation-cvpr21.pdf"
         code: "https://github.com/thuml/Transfer-Learning-Library/tree/master/examples/domain_adaptation/keypoint_detection"
 
       - title: "Resource Efficient Domain Adaptation"
-        authors: Junguang Jiang, Ximei Wang, Mingsheng Long, and Jianmin Wang
-        conference: ACMMM, 2020 (oral)
+        authors: <b>Junguang Jiang</b>, Ximei Wang, Mingsheng Long, and Jianmin Wang
+        conference: ACM Annual Conference on Multimedia (ACMMM), 2020 (oral)
         paper: "https://junguangjiang.github.io/files/resource-efficient-domain-adaptation-acmmm20.pdf"
         code:
 
