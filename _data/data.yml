@@ -16,7 +16,7 @@ sidebar:
     phone:
     website:
     zhihu: JunguangJiang
-    linkedin:
+    linkedin: junguang-jiang-6b6848184
     github: JunguangJiang
     gitlab:
     bitbucket:
@@ -103,20 +103,20 @@ education:
 #        - Related work is published at CVPR2020.
 
 
-    - degree: Master Degree in Software Engineering
+    - degree: Master's Degree in Software Engineering
       university: Tsinghua University (Beijing, China)
       time: 2020 - 2023
       details: |
         - Supervised by [Mingsheng Long](http://ise.thss.tsinghua.edu.cn/~mlong/)
-        - Huawei Scholarship, Tsinghua University, 2021
+        - Comprehensive Excellence Award (Huawei Scholarship), Tsinghua University, 2021
 
-    - degree: Bachelor Degree in Software Engineering
+    - degree: Bachelor's Degree in Software Engineering
       university: Tsinghua University (Beijing, China)
       time: 2015 - 2020
       details: |
         - GPA 3.9 **2st/83**
         - National Scholarship, Tsinghua University, 2019
-        - Comprehensive Excellence Award, Tsinghua University, 2018
+        - Comprehensive Excellence Award (Huawei Scholarship), Tsinghua University, 2018
 
 
 #educationcomplete:
@@ -173,6 +173,12 @@ education:
 
 
 experiences:
+    - role: Teaching Assistant
+      time: 2021
+      company: Tsinghua University
+      details: |
+        Teaching Assistant for Machine Learning, Fall 2021
+
     - role: Internship
       time: 2020-2021
       company: Y-tech, Kuaishou Technology
