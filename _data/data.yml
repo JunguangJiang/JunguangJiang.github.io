@@ -221,17 +221,18 @@ projects:
       Open source libraries and selected course projects.
 
     assignments:
-      - title: Transfer Learning Library  (Translearners)
+      - title: Transfer Learning Library (Translearners)
         link: "https://github.com/thuml/Transfer-Learning-Library"
-        tagline: an open-source and well-documented library
-          for Domain Adaptation, Task Adaptation, and Domain Generalization. |
+        tagline: |
+           - An open-source and well-documented library for Domain Adaptation, Task Adaptation, and Domain Generalization.
            - First Author of  Translearners
             <img alt="GitHub stars" src="https://img.shields.io/github/stars/thuml/Transfer-Learning-Library?style=social">
            - Contribute more than 20k lines of code.
 
       - title: TinyCCompiler
         link: "https://github.com/JunguangJiang/TinyCCompiler"
-        tagline: A tiny C compiler based on LLVM and ANTLR4. |
+        tagline: |
+          - A tiny C compiler based on LLVM and ANTLR4.
           - Project for Compiler Principles which is scored A+.
           - First Author and responsible for implementing symbol tables, error handling, functions, arrays, pointers, etc."
 
