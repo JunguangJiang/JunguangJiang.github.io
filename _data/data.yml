@@ -224,20 +224,20 @@ projects:
       - title: Transfer Learning Library (First Author)
         link: "https://github.com/thuml/Transfer-Learning-Library"
         tagline: |
-         - Transfer Learning Library (Translearners)
-          <img alt="GitHub stars" src="https://img.shields.io/github/stars/thuml/Transfer-Learning-Library?style=social">
-           is an open-source and well-documented library
-          for Domain Adaptation, Task Adaptation, and Domain Generalization.
-         - It is based on pure PyTorch with high performance and friendly API.
-         - The code is pythonic, and the design is consistent with torchvision.
-         - Contribute more than 20k lines of code
+           - Transfer Learning Library (Translearners)
+            <img alt="GitHub stars" src="https://img.shields.io/github/stars/thuml/Transfer-Learning-Library?style=social">
+             is an open-source and well-documented library
+            for Domain Adaptation, Task Adaptation, and Domain Generalization.
+           - It is based on pure PyTorch with high performance and friendly API.
+           - The code is pythonic, and the design is consistent with torchvision.
+           - Contribute more than 20k lines of code
 
       - title: TinyCCompiler (First Author)
         link: "https://github.com/JunguangJiang/TinyCCompiler"
         tagline: |
-        - A tiny C compiler based on LLVM and ANTLR4.
-        - Project for Compiler Principles which is scored A+.
-        - Responsible for implementing symbol tables, error handling, functions, arrays, pointers, etc."
+          - A tiny C compiler based on LLVM and ANTLR4.
+          - Project for Compiler Principles which is scored A+.
+          - Responsible for implementing symbol tables, error handling, functions, arrays, pointers, etc."
 
 
 publications:
