@@ -14,7 +14,7 @@ sidebar:
     # Sidebar links
     email: JiangJunguang1123@outlook.com
     phone:
-    website: JunguangJiang.github.io/publications/ #do not add http://
+    website: https://www.zhihu.com/people/jiang-jun-yan-35
     linkedin:
     github: JunguangJiang
     gitlab:
@@ -232,6 +232,13 @@ publications:
 
 
     papers:
+      - title: "Transferability in Deep Learning: A Survey"
+        authors: Junguang Jiang, Yang Shu, Mingsheng Long
+        conference: To be published
+        paper:
+        code:
+
+
       - title: "Decoupled Adaptation for Cross-Domain Object Detection"
         authors: Junguang Jiang, Baixu Chen, Jianmin Wang, Mingsheng Long
         conference: arixv, 2021
