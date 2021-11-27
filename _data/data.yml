@@ -172,11 +172,11 @@ experiences:
       time: 2020-2021
       company: Y-tech, Kuaishou Technology
       details: |
-        Research transfer learning methods for both 3D and 2D keypoint detection,
+        - Research transfer learning methods for both 3D and 2D keypoint detection,
         which is then applied to the Augmented Reality (AR) applications.
-        Specifically, the labeling for 3D and 2D keypoints of hand gestures is expensive and difficult,
-        thus I propose regressive domain adaptation methods for unsupervised keypoint detection.
-        Related work is published at CVPR2020.
+        - Propose regressive domain adaptation methods for unsupervised keypoint detection
+        to decrease the labeling cost for 3D and 2D keypoints of hand gestures.
+        - Related work is published at CVPR2020.
 
     #- role: Senior Software Engineer
       #time: 2014 - 2015
@@ -210,15 +210,16 @@ projects:
       Open source libraries and selected course projects.
 
     assignments:
-      - title: Transfer Learning Library
+      - title: Transfer Learning Library (First Author)
         link: "https://github.com/thuml/Transfer-Learning-Library (Translearners)"
-        tagline: "Translearners is an open-source and well-documented library for Domain Adaptation,
+        tagline: "
+         Translearners is an open-source and well-documented library for Domain Adaptation,
          Task Adaptation, and Domain Generalization.
          It is based on pure PyTorch with high performance and friendly API.
          The code is pythonic, and the design is consistent with torchvision.
          You can easily develop new algorithms, or readily apply existing algorithms."
 
-      - title: TinyCCompiler
+      - title: TinyCCompiler (First Author)
         link: "https://github.com/JunguangJiang/TinyCCompiler"
         tagline: "A tiny C compiler based on LLVM and ANTLR4.
         Project for Compiler Principles which is scored A+.
@@ -235,7 +236,7 @@ publications:
         authors: Junguang Jiang, Baixu Chen, Jianmin Wang, Mingsheng Long
         conference: arixv, 2021
         paper: "https://junguangjiang.github.io/files/D_adapt.pdf"
-        code: ""
+        code:
 
       - title: "Regressive Domain Adaptation for Unsupervised Keypoint Detection"
         authors: Junguang Jiang, Yifei Ji, Ximei Wang, Yufeng Liu, Jianmin Wang, Mingsheng Long
@@ -247,7 +248,7 @@ publications:
         authors: Junguang Jiang, Ximei Wang, Mingsheng Long, and Jianmin Wang
         conference: ACMMM, 2020 (oral)
         paper: "https://junguangjiang.github.io/files/resource-efficient-domain-adaptation-acmmm20.pdf"
-        code: ""
+        code:
 
 skills:
     title: Skills &amp; Proficiency
