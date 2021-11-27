@@ -215,7 +215,7 @@ projects:
       Open source libraries and selected course projects.
 
     assignments:
-      - title: Transfer Learning Library (First Author)
+      - title: Transfer Learning Library <img alt="GitHub stars" src="https://img.shields.io/github/stars/thuml/Transfer-Learning-Library?style=social"> (First Author)
         link: "https://github.com/thuml/Transfer-Learning-Library"
         tagline: "
          Transfer Learning Library (Translearners) is an open-source and well-documented library
