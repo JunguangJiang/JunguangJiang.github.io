@@ -219,7 +219,6 @@ experiences:
 projects:
     title: Projects
     intro: >
-      Open source libraries and selected course projects.
 
     assignments:
       - title: Open Source Libraries -- Translearners <img alt="GitHub stars" src="https://img.shields.io/github/stars/thuml/Transfer-Learning-Library?style=social">
@@ -263,7 +262,7 @@ publications:
 
       - title: "Resource Efficient Domain Adaptation"
         authors: <b>Junguang Jiang</b>, Ximei Wang, Mingsheng Long, and Jianmin Wang
-        conference: ACM Annual Conference on Multimedia (ACMMM), 2020 (oral)
+        conference: ACM Annual Conference on Multimedia (ACMMM), 2020 (Oral)
         paper: "https://junguangjiang.github.io/files/resource-efficient-domain-adaptation-acmmm20.pdf"
         code:
 
