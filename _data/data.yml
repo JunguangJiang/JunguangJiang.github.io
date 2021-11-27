@@ -34,9 +34,8 @@ sidebar:
 career-profile:
     title: Career Profile
     summary: |
-      Currently full-time Applied Scientist at AWS. After a double master degree at KTH (Stochkolm, Sweden) and Politecnico di Torino (Torino, Italy),
-      I pursued my passion for Computer Vision as researcher in the Heidelberg Collaboratory for Image processing under the supervision of Bjoern Ommer.
-      Lately I successfully completed an internship at AWS in Pasadena under the supervision of Pietro Perona.
+      I am Junguang Jiang. Now, I'm a Master Student at Tsinghua University under the supervision of Mingsheng Long.
+      My current research foucs on algorithms and real-world applications for deep transfer learning, especically deep domain adaptation.
 
 #news:
 #    title: News
@@ -91,12 +90,12 @@ career-profile:
 
 education:
 
-    - degree: Internship
-      university: Y-tech, Kuaishou Technology
-      time: 2020-2021
-      details: |
-        - Research transfer algorithms for 3D and 2D keypoint detection.
-        - Related work is published at CVPR2020.
+#    - degree: Internship
+#      university: Y-tech, Kuaishou Technology
+#      time: 2020-2021
+#      details: |
+#        - Research transfer algorithms for 3D and 2D keypoint detection.
+#        - Related work is published at CVPR2020.
 
 
     - degree: Master Degree in Software Engineering
@@ -169,22 +168,15 @@ education:
 
 
 experiences:
-    - role: Lead Developer
-      time: 2015 - Present
-      company: Startup Hubs, San Francisco
+    - role: Internship
+      time: 2020-2021
+      company: Y-tech, Kuaishou Technology
       details: |
-        Describe your role here lorem ipsum dolor sit amet, consectetuer
-        adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-        Cum sociis natoque penatibus et magnis dis parturient montes,
-        nascetur ridiculus mus. Donec quam felis, ultricies nec,
-        pellentesque eu, pretium quis, sem. Nulla consequat massa quis
-        enim. Donec pede justo. Sed ut perspiciatis unde omnis iste natus
-        error sit voluptatem accusantium doloremque laudantium, totam rem
-        aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-        architecto beatae vitae dicta sunt explicabo.
-
-          - Bullet point
-          - Bullet point
+        Research transfer learning methods for both 3D and 2D keypoint detection,
+        which is then applied to the Augmented Reality (AR) applications.
+        Specifically, the labeling for 3D and 2D keypoints of hand gestures is expensive and difficult,
+        thus I propose regressive domain adaptation methods for unsupervised keypoint detection.
+        Related work is published at CVPR2020.
 
     #- role: Senior Software Engineer
       #time: 2014 - 2015
@@ -215,30 +207,23 @@ experiences:
 projects:
     title: Projects
     intro: >
-      You can list your side projects or open source libraries in this
-      section. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Vestibulum et ligula in nunc bibendum fringilla a eu lectus.
+      Open source libraries and selected course projects.
 
     assignments:
-      - title: Velocity
-        link: "#hook"
-        tagline: "A responsive website template designed to help startups promote, market and sell their products."
+      - title: Transfer Learning Library
+        link: "https://github.com/thuml/Transfer-Learning-Library (Translearners)"
+        tagline: "Translearners is an open-source and well-documented library for Domain Adaptation,
+         Task Adaptation, and Domain Generalization.
+         It is based on pure PyTorch with high performance and friendly API.
+         The code is pythonic, and the design is consistent with torchvision.
+         You can easily develop new algorithms, or readily apply existing algorithms."
 
-      - title: DevStudio
-        link: "#"
-        tagline: "A responsive website template designed to help web developers/designers market their services."
+      - title: TinyCCompiler
+        link: "https://github.com/JunguangJiang/TinyCCompiler"
+        tagline: "A tiny C compiler based on LLVM and ANTLR4.
+        Project for Compiler Principles which is scored A+.
+        Responsible for implementing symbol tables, error handling, functions, arrays, pointers, etc."
 
-      - title: Tempo
-        link: "#"
-        tagline: "A responsive website template designed to help startups promote their products or services and to attract users &amp; investors"
-
-      - title: Atom
-        link: "#"
-        tagline: "A comprehensive website template solution for startups/developers to market their mobile apps."
-
-      - title: Delta
-        link: "#"
-        tagline: "A responsive Bootstrap one page theme designed to help app developers promote their mobile apps"
 
 publications:
     title: Publications
@@ -249,16 +234,20 @@ publications:
       - title: "Decoupled Adaptation for Cross-Domain Object Detection"
         authors: Junguang Jiang, Baixu Chen, Jianmin Wang, Mingsheng Long
         conference: arixv, 2021
-        paper: "https://arxiv.org/abs/2110.02578"
+        paper: "https://junguangjiang.github.io/files/D_adapt.pdf"
         code: ""
 
       - title: "Regressive Domain Adaptation for Unsupervised Keypoint Detection"
         authors: Junguang Jiang, Yifei Ji, Ximei Wang, Yufeng Liu, Jianmin Wang, Mingsheng Long
         conference: CVPR, 2020
+        paper: "https://junguangjiang.github.io/files/regressive-domain-adaptation-cvpr21.pdf"
+        code: "https://github.com/thuml/Transfer-Learning-Library/tree/master/examples/domain_adaptation/keypoint_detection"
 
       - title: "Resource Efficient Domain Adaptation"
         authors: Junguang Jiang, Ximei Wang, Mingsheng Long, and Jianmin Wang
         conference: ACMMM, 2020 (oral)
+        paper: "https://junguangjiang.github.io/files/resource-efficient-domain-adaptation-acmmm20.pdf"
+        code: ""
 
 skills:
     title: Skills &amp; Proficiency
