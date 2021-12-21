@@ -252,7 +252,7 @@ publications:
         authors: <b>Junguang Jiang</b>, Baixu Chen, Jianmin Wang, Mingsheng Long
         conference: arixv, 2021
         paper: "https://junguangjiang.github.io/files/D_adapt.pdf"
-        code:
+        code: "https://github.com/thuml/Transfer-Learning-Library/tree/dev-da-object-detection/examples/domain_adaptation/object_detection/d_adapt"
 
       - title: "Regressive Domain Adaptation for Unsupervised Keypoint Detection"
         authors: <b>Junguang Jiang</b>, Yifei Ji, Ximei Wang, Yufeng Liu, Jianmin Wang, Mingsheng Long
