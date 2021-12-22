@@ -40,9 +40,11 @@ career-profile:
       My current research foucs on algorithms and real-world applications for deep learning, transfer learning and domain adaptation.
 
       I created a Transfer Learning Library
-      <a href="https://github.com/thuml/Transfer-Learning-Library">Translearners</a>
+      <a href="https://github.com/thuml/Transfer-Learning-Library">TLlib</a>
       and got over <img alt="GitHub stars" src="https://img.shields.io/github/stars/thuml/Transfer-Learning-Library?style=social">.
-
+      
+      Here is my <a href="https://junguangjiang.github.io/files/resume.pdf">Chinese resume (中文简历)</a>.
+ 
 #news:
 #    title: News
 #    intro: |
@@ -221,7 +223,7 @@ projects:
     intro: >
 
     assignments:
-      - title: Open Source Libraries -- Translearners <img alt="GitHub stars" src="https://img.shields.io/github/stars/thuml/Transfer-Learning-Library?style=social">
+      - title: Open Source Libraries -- TLlib <img alt="GitHub stars" src="https://img.shields.io/github/stars/thuml/Transfer-Learning-Library?style=social">
         link: "https://github.com/thuml/Transfer-Learning-Library"
         tagline: |
            - An open-source and well-documented library for Transfer Learning, Domain Adaptation, Task Adaptation, and Domain Generalization.
