@@ -246,7 +246,7 @@ publications:
       - title: "Transferability in Deep Learning: A Survey"
         authors: <b>Junguang Jiang</b>, Yang Shu, Jianmin Wang, Mingsheng Long
         conference: arixv, 2021
-        paper: Transferable_Deep_Learning__A_Survey.pdf
+        paper: "https://junguangjiang.github.io/files/Transferable_Deep_Learning__A_Survey.pdf"
         code: 
 
 
