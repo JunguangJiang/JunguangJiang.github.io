@@ -245,14 +245,14 @@ publications:
     papers:
       - title: "Transferability in Deep Learning: A Survey"
         authors: <b>Junguang Jiang</b>, Yang Shu, Jianmin Wang, Mingsheng Long
-        conference: arixv, 2021
+        conference: arixv, 2022
         paper: "https://junguangjiang.github.io/files/Transferable_Deep_Learning__A_Survey.pdf"
         code: 
 
 
       - title: "Decoupled Adaptation for Cross-Domain Object Detection"
         authors: <b>Junguang Jiang</b>, Baixu Chen, Jianmin Wang, Mingsheng Long
-        conference: arixv, 2021
+        conference: The Tenth International Conference on Learning Representations (ICLR), 2022
         paper: "https://junguangjiang.github.io/files/D_adapt.pdf"
         code: "https://github.com/thuml/Transfer-Learning-Library/tree/dev-da-object-detection/examples/domain_adaptation/object_detection/d_adapt"
 
