@@ -117,7 +117,7 @@ education:
       university: Tsinghua University (Beijing, China)
       time: 2015 - 2020
       details: |
-        - GPA **3.9** Ranking **2st/83**
+        - GPA **3.9** Ranking **2nd/83**
         - National Scholarship (top 1%), Tsinghua University, 2019
         - Comprehensive Excellence Award (Huawei Scholarship, top 1%), Tsinghua University, 2018
 
@@ -249,6 +249,11 @@ publications:
         paper: "https://junguangjiang.github.io/files/Transferable_Deep_Learning__A_Survey.pdf"
         code: 
 
+      - title: "Debiased Pseudo Labeling in Self-Training"
+        authors: Baixu Chen, <b>Junguang Jiang (co-first authors)</b>, Ximei Wang, Jianmin Wang, Mingsheng Long 
+        conference: arixv, 2022
+        paper: "https://junguangjiang.github.io/files/Debiased%20Pseudo%20Labeling%20in%20Self-Training.pdf"
+        code: 
 
       - title: "Decoupled Adaptation for Cross-Domain Object Detection"
         authors: <b>Junguang Jiang</b>, Baixu Chen, Jianmin Wang, Mingsheng Long
