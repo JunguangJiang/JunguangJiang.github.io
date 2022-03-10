@@ -28,6 +28,12 @@
       {% if publication.code %}
       [<a href={{publication.code}}>Code</a>]
       {% endif %}
+      {% if publication.video %}
+      [<a href={{publication.video}}>Video</a>]
+      {% endif %}
+      {% if publication.poster %}
+      [<a href={{publication.poster}}>Poster</a>]
+      {% endif %}
     </div>
   </div><!--//item-->
   {% endfor %}
