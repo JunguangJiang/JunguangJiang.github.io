@@ -260,12 +260,14 @@ publications:
         conference: The Tenth International Conference on Learning Representations (ICLR), 2022
         paper: "https://arxiv.org/pdf/2110.02578.pdf"
         code: "https://github.com/thuml/Transfer-Learning-Library/tree/dev-da-object-detection/examples/domain_adaptation/object_detection/d_adapt"
+        poster:  "https://junguangjiang.github.io/files/ICLR2022_Decoupled_Adaptation_for_Cross_Domain_Object_Detection_poster.pdf"
 
       - title: "Regressive Domain Adaptation for Unsupervised Keypoint Detection"
         authors: <b>Junguang Jiang</b>, Yifei Ji, Ximei Wang, Yufeng Liu, Jianmin Wang, Mingsheng Long
         conference: IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2021
         paper: "https://arxiv.org/pdf/2103.06175.pdf"
         code: "https://github.com/thuml/Transfer-Learning-Library/tree/master/examples/domain_adaptation/keypoint_detection"
+        
 
       - title: "Resource Efficient Domain Adaptation"
         authors: <b>Junguang Jiang</b>, Ximei Wang, Mingsheng Long, and Jianmin Wang
