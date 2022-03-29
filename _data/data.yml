@@ -258,8 +258,8 @@ publications:
       - title: "Decoupled Adaptation for Cross-Domain Object Detection"
         authors: <b>Junguang Jiang</b>, Baixu Chen, Jianmin Wang, Mingsheng Long
         conference: The Tenth International Conference on Learning Representations (ICLR), 2022
-        paper: "https://arxiv.org/pdf/2110.02578.pdf"
-        code: "https://github.com/thuml/Transfer-Learning-Library/tree/dev-da-object-detection/examples/domain_adaptation/object_detection/d_adapt"
+        paper: "https://openreview.net/pdf?id=VNqaB1g9393"
+        code: "https://github.com/thuml/Transfer-Learning-Library/tree/dev-tllib/examples/domain_adaptation/object_detection/d_adapt"
         poster: "https://junguangjiang.github.io/files/D_adapt_poster.pdf"
         slide: "https://junguangjiang.github.io/files/D_adapt_slides.pdf"
         video: ""
