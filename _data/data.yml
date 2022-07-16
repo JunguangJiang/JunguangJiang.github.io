@@ -263,6 +263,7 @@ publications:
         poster: "https://junguangjiang.github.io/files/D_adapt_poster.pdf"
         slide: "https://junguangjiang.github.io/files/D_adapt_slides.pdf"
         video: "https://iclr.cc/virtual/2022/poster/6215"
+        chinese_video: "https://www.bilibili.com/video/BV1BW4y1672F?p=1&share_medium=android&share_plat=android&share_session_id=44c15f62-85f1-46b6-b310-a82967a70cad&share_source=COPY&share_tag=s_i&timestamp=1656334634&unique_k=JQeg1oW&vd_source=e40849daa6bf5bc6d7b2d6f9c0b4b7d6"
         
         
       - title: "Regressive Domain Adaptation for Unsupervised Keypoint Detection"
@@ -273,7 +274,6 @@ publications:
         poster: "https://junguangjiang.github.io/files/RegDA_poster.pdf"
         slide: "https://junguangjiang.github.io/files/RegDA_slides.pdf"
         video: "https://www.youtube.com/watch?v=zXBpPEOFO8E"
-        chinese_video: "https://www.bilibili.com/video/BV1BW4y1672F?p=1&share_medium=android&share_plat=android&share_session_id=44c15f62-85f1-46b6-b310-a82967a70cad&share_source=COPY&share_tag=s_i&timestamp=1656334634&unique_k=JQeg1oW&vd_source=e40849daa6bf5bc6d7b2d6f9c0b4b7d6"
     
       - title: "Resource Efficient Domain Adaptation"
         authors: <b>Junguang Jiang</b>, Ximei Wang, Mingsheng Long, and Jianmin Wang
