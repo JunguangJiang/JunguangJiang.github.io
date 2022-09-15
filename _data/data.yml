@@ -251,9 +251,9 @@ publications:
 
       - title: "Debiased Pseudo Labeling in Self-Training"
         authors: Baixu Chen, <b>Junguang Jiang (co-first authors)</b>, Ximei Wang, Jianmin Wang, Mingsheng Long 
-        conference: arixv, 2022
+        conference: NIPS, 2022
         paper: "https://arxiv.org/pdf/2202.07136.pdf"
-        code: 
+        code: "https://github.com/thuml/Transfer-Learning-Library/tree/master/examples/semi_supervised_learning/image_classification"
 
       - title: "Decoupled Adaptation for Cross-Domain Object Detection"
         authors: <b>Junguang Jiang</b>, Baixu Chen, Jianmin Wang, Mingsheng Long
