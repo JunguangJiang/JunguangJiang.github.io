@@ -37,7 +37,7 @@ career-profile:
     summary: |
       I am Junguang Jiang. Now, I'm a Master Student at Tsinghua University under the supervision of Mingsheng Long.
 
-      My current research foucs on algorithms and real-world applications for deep learning, transfer learning and domain adaptation.
+      My current research foucs on algorithms and real-world applications for deep learning, transfer learning and multi-task learning.
 
       I created a Transfer Learning Library
       <a href="https://github.com/thuml/Transfer-Learning-Library">TLlib</a>
@@ -176,6 +176,12 @@ education:
 
 
 experiences:
+    - role: Internship
+      time: 2022-2023
+      company: Tencent Inc, China
+      details: |
+        - Research on multi-task learning, mainly for recommendation tasks
+        
     - role: Teaching Assistant
       time: 2021
       company: Tsinghua University
@@ -186,7 +192,7 @@ experiences:
       time: 2020-2021
       company: Y-tech, Kuaishou Technology
       details: |
-        - Research transfer learning methods for both 3D and 2D keypoint detection,
+        - Research on transfer learning for both 3D and 2D keypoint detection,
         which is then applied to the Augmented Reality (AR) applications.
         - Propose regressive domain adaptation methods for unsupervised keypoint detection
         to decrease the labeling cost for 3D and 2D keypoints of hand gestures.
@@ -243,6 +249,11 @@ publications:
 
 
     papers:
+      - title: "ForkMerge: Overcoming Negative Transfer in Multi-Task Learning"
+        authors: <b>Junguang Jiang</b>, Baixu Chen, Junwei Pan, Ximei Wang, Liu Dapeng, Jie Jiang, Mingsheng Long
+        paper: "https://arxiv.org/pdf/2301.12618.pdf"
+        conference: arixv, 2023
+        
       - title: "Transferability in Deep Learning: A Survey"
         authors: <b>Junguang Jiang</b>, Yang Shu, Jianmin Wang, Mingsheng Long
         conference: arixv, 2022
