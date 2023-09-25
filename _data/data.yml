@@ -35,9 +35,8 @@ sidebar:
 career-profile:
     title: Career Profile
     summary: |
-      I am Junguang Jiang. Now, I'm a Master Student at Tsinghua University under the supervision of Mingsheng Long.
-
-      My current research foucs on algorithms and real-world applications for deep learning, transfer learning and multi-task learning.
+      I am Junguang Jiang. I graduated from Tsinghua University under the supervision of Mingsheng Long. 
+      Now, I work as an algorithm engineer in the display advertising team at Alimama.
 
       I created a Transfer Learning Library
       <a href="https://github.com/thuml/Transfer-Learning-Library">TLlib</a>
@@ -252,7 +251,7 @@ publications:
       - title: "ForkMerge: Overcoming Negative Transfer in Multi-Task Learning"
         authors: <b>Junguang Jiang</b>, Baixu Chen, Junwei Pan, Ximei Wang, Liu Dapeng, Jie Jiang, Mingsheng Long
         paper: "https://arxiv.org/pdf/2301.12618.pdf"
-        conference: arixv, 2023
+        conference: Conference and Workshop on Neural Information Processing Systems (NIPS), 2023
         
       - title: "Transferability in Deep Learning: A Survey"
         authors: <b>Junguang Jiang</b>, Yang Shu, Jianmin Wang, Mingsheng Long
